@@ -1,0 +1,35 @@
+{
+  "name": "triviabot",
+  "version": "1.0.0",
+  "description": "A version of my House Trivia Bot, but without the House code. Made for Dr1fterX Discord Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TwilightZebby/TriviaBot.git"
+  },
+  "keywords": [
+    "discord",
+    "discordjs",
+    "discord-js",
+    "nodejs",
+    "discord-bot"
+  ],
+  "author": "TwilightZebby",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TwilightZebby/TriviaBot/issues"
+  },
+  "homepage": "https://github.com/TwilightZebby/TriviaBot#readme",
+  "dependencies": {
+    "bufferutil": "^4.0.3",
+    "discord.js": "^12.5.3",
+    "erlpack": "github:discord/erlpack",
+    "libsodium-wrappers": "^0.7.9",
+    "node-gyp": "^8.0.0",
+    "utf-8-validate": "^5.0.4",
+    "zlib-sync": "^0.1.7"
+  }
+}
