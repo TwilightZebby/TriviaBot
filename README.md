@@ -27,8 +27,6 @@ The Bot's Trivia Rounds works as so:
 
 
 ### What are the Register/Deregister Commands for?
-> They still use the Bot's `t?` prefix since they wouldn't work as a Slash Command (see above).
-> 
 > The `register` command is for registering this Bot's Slash Commands
 > The `deregister` command does the reverse, it removes those registered Slash Commands
 >
