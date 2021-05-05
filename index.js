@@ -499,7 +499,7 @@ client.on('raw', async (evt) => {
 
         // execute slash commmand
         try {
-            await fetchedSlashCommand.execute(data["guild_id"], data, CommandData, authorMember, authorUser);
+            await fetchedSlashCommand.execute(data["guild_id"], data, CommandData, authorMember);
         } catch (err) {
             await ErrorModule.LogCustom(err, `(**INDEX.JS** - Execute __slash__ command fail)`);
             await SlashModule.CallbackEphemeral(data, `Sorry ${authorMember !== null ? authorMember.user["username"] : authorUser["username"]} - there was an error trying to run that Slash Command...`).catch(async (err) => {

@@ -9,7 +9,7 @@ This is just a small little Trivia Bot made by TwilightZebby for use on Dr1fterX
 
 The Bot's Trivia Rounds works as so:
 
-* Once a round starts (triggered using a command by that round's host), a series of random questions are given to the Users in a special Text Channel.
+* Once a round starts (triggered using a command by that round's host), a series of random questions are given to the Users.
 * Each question is given one at a time, with about 20 seconds given to try and answer it correctly.
 * Users earn points for answering questions correctly.
 * *However,* only the first ten (10) to answer correctly gets points. The quicker you are of those 10, the more points you earn!
