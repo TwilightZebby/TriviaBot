@@ -32,12 +32,14 @@ module.exports = {
     /**
      * Command's functionality
      * 
-     * @param {Discord.Guild} guild 
+     * @param {*} guildID
      * @param {*} data
      * @param {*} commandData
      * @param {Discord.GuildMember} member
      */
-    async execute(guild, data, commandData, member) {
+    async execute(guildID, data, commandData, member) {
+
+      let guild = await client.guilds.fetch(guildID);
 
       // JSON IMPORTS
       const PLAYERSCORES = require('../hiddenJsonFiles/playerScores.json');
@@ -97,7 +99,7 @@ module.exports = {
 
         // Check Scores Store
         if ( !PLAYERSCORES[authorMember.user.id] ) {
-          return await SlashCommands.Callback(data, `You haven't earnt any points yet!`);
+          return await SlashCommands.CallbackEphemeral(data, `You haven't earnt any points yet!`);
         }
 
 
@@ -156,7 +158,7 @@ module.exports = {
 
         // Check Scores Stores
         if ( !PLAYERSCORES[member.user.id] ) {
-          return await SlashCommands.Callback(data, `${member.displayName} has yet to earn any points!`);
+          return await SlashCommands.CallbackEphemeral(data, `${member.displayName} has yet to earn any points!`);
         }
 
 

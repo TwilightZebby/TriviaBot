@@ -32,12 +32,12 @@ module.exports = {
     /**
      * Command's functionality
      * 
-     * @param {Discord.Guild} guild 
+     * @param {*} guildID 
      * @param {*} data
      * @param {*} commandData
      * @param {Discord.GuildMember} member
      */
-    async execute(guild, data, commandData, member) {
+    async execute(guildID, data, commandData, member) {
 
       //.
 
