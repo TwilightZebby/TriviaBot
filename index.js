@@ -7,7 +7,7 @@ const Discord = require('discord.js');
 // GLOBAL STUFF
 const { client } = require('./constants.js');
 const { PREFIX, TOKEN } = require('./config.js');
-const RoundHosts = require('./jsonFiles/hosts.json');
+const RoundHosts = require('./hiddenJsonFiles/hosts.json');
 
 
 
