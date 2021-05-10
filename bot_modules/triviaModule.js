@@ -10,6 +10,8 @@ const CONFIG = require('../config.js');
 const QSTORE = require('../triviaQuestions/christmas2020.json'); // Bringing in the Questions & Answers (change if need be)
 const EMPTYSCORES = require('../templates/templateJSON.json');
 
+const ErrorModule = require('./errorLogger.js');
+
 let questionInterval;
 let delay = 50000;
 let askedQuestions = [ 0 ];
@@ -143,9 +145,6 @@ module.exports = {
 
         let TEMPSCORES = require('../hiddenJsonFiles/roundScores.json');
 
-        // MODULE IMPORTS
-        const ErrorModule = require('./errorLogger.js');
-
 
 
 
@@ -220,7 +219,7 @@ module.exports = {
 
 
         // Clear roundScores.json so that it is ready for the next round
-        fs.writeFile('./roundScores.json', JSON.stringify(EMPTYSCORES, null, 4), async (err) => {
+        fs.writeFile('./hiddenJsonFiles/roundScores.json', JSON.stringify(EMPTYSCORES, null, 4), async (err) => {
             if (err) {
                 await ErrorModule.LogCustom(err, `ERROR while trying to SAVE EMPTYSCORES to roundScores.json`);
             }
@@ -267,9 +266,6 @@ module.exports = {
 
         let TEMPSCORES = require('../hiddenJsonFiles/roundScores.json');
         const PLAYERSCORES = require('../hiddenJsonFiles/playerScores.json');
-
-        // MODULE IMPORTS
-        const Errors = client.modules.get("errorLogger");
 
 
 
@@ -395,13 +391,13 @@ module.exports = {
                 // Save new rankings to JSONs
                 fs.writeFile('./hiddenJsonFiles/playerScores.json', JSON.stringify(PLAYERSCORES, null, 4), async (err) => {
                     if (err) {
-                        await Errors.LogCustom(err, `ERROR while trying to SAVE PLAYERSCORES to playerScores.json`);
+                        await ErrorModule.LogCustom(err, `ERROR while trying to SAVE PLAYERSCORES to playerScores.json`);
                     }
                 });
 
                 fs.writeFile('./hiddenJsonFiles/roundScores.json', JSON.stringify(TEMPSCORES, null, 4), async (err) => {
                     if (err) {
-                        await Errors.LogCustom(err, `ERROR while trying to SAVE TEMPSCORES to roundScores.json`);
+                        await ErrorModule.LogCustom(err, `ERROR while trying to SAVE TEMPSCORES to roundScores.json`);
                     }
                 });
 

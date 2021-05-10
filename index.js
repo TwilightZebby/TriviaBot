@@ -635,7 +635,7 @@ client.on('message', async (message) => {
                     // Only myself, Dr1fterX, and any assigned Round Hosts can use this command
                     if ( !RoundHosts[`${message.author.id}`] )
                     {
-                        return await message.channel.send(`**${message.member.displayName} sorry, but that command is limited to the assigned Round Hosts`);
+                        return await message.channel.send(`**${message.member.displayName}** sorry, but that command is limited to the assigned Round Hosts`);
                     }
                     break;
 
