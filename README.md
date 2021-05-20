@@ -1,5 +1,5 @@
 # Trivia Bot
-*Not the House Trivia Bot*
+*Not the [House Trivia Bot](https://github.com/TwilightZebby/HouseTriviaBot)*
 
 ---
 
