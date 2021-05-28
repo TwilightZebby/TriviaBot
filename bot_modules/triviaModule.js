@@ -322,7 +322,7 @@ module.exports = {
                 }
             }
 
-            return isAnswerCorrect && m.member.user.id !== "156482326887530498" && !correctUserIDs.includes(m.member.user.id);
+            return isAnswerCorrect && m.member.user.id !== "156482326887530498" && m.member.user.id !== "259073082277363713" && !correctUserIDs.includes(m.member.user.id);
             //return isAnswerCorrect && !correctUserIDs.includes(m.member.user.id);
         }
 
