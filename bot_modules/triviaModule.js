@@ -16,6 +16,7 @@ let questionInterval;
 let delay = 50000;
 let askedQuestions = [ 0 ];
 let correctUserIDs = [];
+let wrongUserIDs = [];
 
 // THIS MODULE
 module.exports = {
@@ -35,7 +36,7 @@ module.exports = {
 
         // Send starting message
         let embed = new Discord.MessageEmbed().setColor('#008bb5')
-        .setTitle(`New Trivia Round!`)
+        .setTitle(`Trivia Night!`)
         .setDescription(`A new Trivia Round is about to start!
         
         You will have 20 seconds per question to answer them correctly.
@@ -204,7 +205,7 @@ module.exports = {
 
         // SEND
         let playerEmbed = new Discord.MessageEmbed().setColor('GOLD')
-        .setTitle(`Player Results of this Round`)
+        .setTitle(`Results of this Round`)
         .setDescription(`${roundResultsArray.join(`\n`)}`);
 
 
@@ -316,14 +317,21 @@ module.exports = {
             let isAnswerCorrect = false;
 
             for ( let i = 0; i < questionAnswers.length; i++ ) {
-                if ( m.content.toLowerCase().includes(questionAnswers[i]) ) {
+                if ( m.content.toLowerCase().includes(questionAnswers[i]) )
+                {
+                    // They got the correct answer
                     isAnswerCorrect = true;
                     break;
                 }
+                else
+                {
+                    // They got the answer wrong
+                    wrongUserIDs.push(m.member.user.id);
+                }
             }
 
-            return isAnswerCorrect && m.member.user.id !== "156482326887530498" && m.member.user.id !== "259073082277363713" && !correctUserIDs.includes(m.member.user.id);
-            //return isAnswerCorrect && !correctUserIDs.includes(m.member.user.id);
+            return isAnswerCorrect && m.member.user.id !== "156482326887530498" && m.member.user.id !== "259073082277363713" && !correctUserIDs.includes(m.member.user.id) && !wrongUserIDs.includes(m.member.user.id);
+            //return isAnswerCorrect && !correctUserIDs.includes(m.member.user.id) && !wrongUserIDs.includes(m.member.user.id);
         }
 
 
@@ -348,6 +356,7 @@ module.exports = {
         collector.on('end', async (collected, reason) => {
 
             correctUserIDs = [];
+            wrongUserIDs = [];
 
             // Time is up! Check Array
             let embed = new Discord.MessageEmbed().setColor('#008bb5')
