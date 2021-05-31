@@ -323,11 +323,12 @@ module.exports = {
                     isAnswerCorrect = true;
                     break;
                 }
-                else
-                {
-                    // They got the answer wrong
-                    wrongUserIDs.push(m.member.user.id);
-                }
+            }
+
+            if ( !isAnswerCorrect )
+            {
+                // They got the answer wrong
+                wrongUserIDs.push(m.member.user.id);
             }
 
             return isAnswerCorrect && m.member.user.id !== "156482326887530498" && m.member.user.id !== "259073082277363713" && !correctUserIDs.includes(m.member.user.id) && !wrongUserIDs.includes(m.member.user.id);
