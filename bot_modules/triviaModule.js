@@ -293,12 +293,13 @@ module.exports = {
 
         let chosenQuestion = QSTORE[`${questionNumber}`].question;
         let questionAnswers = QSTORE[`${questionNumber}`].answers;
+        let questionTag = QSTORE[`${questionNumber}`].tag;
 
         
 
         // Send Question
         let embed = new Discord.MessageEmbed().setColor('#75ebeb')
-        .setTitle(`Question ${currentNumber}`)
+        .setTitle(`Question ${currentNumber} - [${questionTag}]`)
         .setDescription(`${chosenQuestion}`);
 
 
