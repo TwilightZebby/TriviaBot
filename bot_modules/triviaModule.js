@@ -293,7 +293,7 @@ module.exports = {
 
         let chosenQuestion = QSTORE[`${questionNumber}`].question;
         let questionAnswers = QSTORE[`${questionNumber}`].answers;
-        let questionTag = QSTORE[`${questionNumber}`].tag;
+        let questionTag = QSTORE[`${questionNumber}`].tag || "No Tag";
 
         
 
@@ -318,7 +318,9 @@ module.exports = {
             let isAnswerCorrect = false;
 
             for ( let i = 0; i < questionAnswers.length; i++ ) {
-                if ( m.content.toLowerCase().includes(questionAnswers[i]) )
+                let tempRegEx = new RegExp(questionAnswers[i], "i");
+
+                if ( tempRegEx.test(m.content.toLowerCase()) )
                 {
                     // They got the correct answer
                     isAnswerCorrect = true;
