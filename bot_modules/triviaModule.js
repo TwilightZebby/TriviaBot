@@ -42,7 +42,8 @@ module.exports = {
         You will have 20 seconds per question to answer them correctly.
         The first 10 correct answers score points, the quicker you are, the more points you earn!
         
-        Answers are case-insensitive, so don't worry about UPPERCASE letters!`)
+        Answers are case-insensitive, so don't worry about UPPERCASE letters!
+        Furthermore, only your first answer/guess for each question will be checked.`)
         .addFields(
             {
                 name: `Round Host`,
