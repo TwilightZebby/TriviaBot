@@ -294,7 +294,7 @@ module.exports = {
 
         let chosenQuestion = QSTORE[`${questionNumber}`].question;
         let questionAnswers = QSTORE[`${questionNumber}`].answers;
-        let questionTag = QSTORE[`${questionNumber}`].tag || "No Tag";
+        let questionTag = QSTORE[`${questionNumber}`].tag || "Misc.";
 
         
 
