@@ -7,7 +7,7 @@ const { client } = require('../constants.js');
 const CONFIG = require('../config.js');
 
 // OTHER IMPORTS
-const QSTORE = require('../triviaQuestions/christmas2020.json'); // Bringing in the Questions & Answers (change if need be)
+const QSTORE = require('../triviaQuestions/june2021.json'); // Bringing in the Questions & Answers (change if need be)
 const EMPTYSCORES = require('../templates/templateJSON.json');
 
 const ErrorModule = require('./errorLogger.js');
